@@ -1,6 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Target, Heart, Globe, Award, Shield, Leaf, Droplet, Ban, Recycle } from 'lucide-react';
+import { Heart, Award, Shield, Leaf, Droplet, Ban, Recycle } from 'lucide-react';
+import aboutHeroImage from '../images/about_hero.jpg';
+import aboutStory1Image from '../images/about_story1.jpg';
+import aboutStory2Image from '../images/about_story2.jpg';
+import aboutStory3Image from '../images/about_story3.jpeg';
+import aboutStory4Image from '../images/about_story4.jpg';
 
 const About: React.FC = () => {
   const fadeIn = {
@@ -41,11 +46,11 @@ const About: React.FC = () => {
       <section className="relative pt-32 pb-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.pexels.com/photos/7262776/pexels-photo-7262776.jpeg" 
+            src={aboutHeroImage}
             alt="Tissu manufacturing" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gray-900 bg-opacity-70"></div>
+          <div className="absolute inset-0 bg-gray-900 bg-opacity-30"></div>
         </div>
         
         <div className="container-custom relative z-10 text-white">
@@ -101,22 +106,22 @@ const About: React.FC = () => {
             >
               <div className="grid grid-cols-2 gap-4">
                 <img 
-                  src="https://images.pexels.com/photos/4239029/pexels-photo-4239029.jpeg" 
+                  src={aboutStory1Image} 
                   alt="Eco-friendly tissue paper" 
                   className="rounded-lg shadow-medium h-48 object-cover"
                 />
                 <img 
-                  src="https://images.pexels.com/photos/6941897/pexels-photo-6941897.jpeg" 
+                  src={aboutStory2Image}
                   alt="Sustainable production" 
                   className="rounded-lg shadow-medium h-48 object-cover"
                 />
                 <img 
-                  src="https://images.pexels.com/photos/6941919/pexels-photo-6941919.jpeg" 
+                  src={aboutStory3Image} 
                   alt="Quality control" 
                   className="rounded-lg shadow-medium h-48 object-cover"
                 />
                 <img 
-                  src="https://images.pexels.com/photos/6940379/pexels-photo-6940379.jpeg" 
+                  src={aboutStory4Image} 
                   alt="Finished products" 
                   className="rounded-lg shadow-medium h-48 object-cover"
                 />
@@ -174,68 +179,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Sustainability Section */}
-      <section className="section">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-            >
-              <h2 className="text-3xl font-bold mb-6">Our Sustainability Focus</h2>
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center">
-                    <Recycle className="h-5 w-5 text-primary" />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-xl font-semibold mb-2">Biodegradable & Compostable</h3>
-                    <p className="text-gray-600">Breaks down easily after use — good for your home and the Earth.</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center">
-                    <Ban className="h-5 w-5 text-primary" />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-xl font-semibold mb-2">Plastic-Free Packaging</h3>
-                    <p className="text-gray-600">Made with recycled paper or cornstarch-based alternatives.</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center">
-                    <Leaf className="h-5 w-5 text-primary" />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-xl font-semibold mb-2">Low-Waste Production</h3>
-                    <p className="text-gray-600">Reduces energy and water consumption by over 30% compared to conventional manufacturing.</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={{
-                hidden: { opacity: 0, x: 20 },
-                visible: { 
-                  opacity: 1, 
-                  x: 0,
-                  transition: { duration: 0.6 }
-                }
-              }}
-            >
-              <img 
-                src="https://images.pexels.com/photos/7262397/pexels-photo-7262397.jpeg" 
-                alt="Sustainable manufacturing" 
-                className="rounded-lg shadow-medium w-full"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Customer Benefits Section */}
       <section className="section bg-primary bg-opacity-5">

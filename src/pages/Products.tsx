@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Filter, Leaf, DropletIcon, ShieldCheck, Recycle, Heart } from 'lucide-react';
+import { Filter, Leaf, ShieldCheck, Heart } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
+import productsHeroImage from '../images/products_hero.jpeg';
 
 const Products: React.FC = () => {
   const fadeIn = {
@@ -109,11 +110,11 @@ const Products: React.FC = () => {
       <section className="relative pt-32 pb-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.pexels.com/photos/7262776/pexels-photo-7262776.jpeg" 
+            src={productsHeroImage} 
             alt="Tissu products" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gray-900 bg-opacity-70"></div>
+          <div className="absolute inset-0 bg-gray-900 bg-opacity-40"></div>
         </div>
         
         <div className="container-custom relative z-10 text-white">
@@ -238,59 +239,7 @@ const Products: React.FC = () => {
         </div>
       </section>
 
-      {/* Sustainability Section */}
-      <section className="section bg-primary bg-opacity-5">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
-            >
-              <h2 className="text-3xl font-bold mb-4">Our Eco-Friendly Promise</h2>
-              <p className="text-gray-700 mb-6">
-                Every Tissu product is created with our commitment to sustainability at its core. From responsible sourcing to biodegradable packaging, we ensure our products are as kind to the Earth as they are to you.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  'Biodegradable and compostable materials',
-                  'Plastic-free packaging options',
-                  'Low-waste manufacturing process',
-                  'Energy-efficient production',
-                  'Water conservation practices'
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mt-0.5">
-                      <Recycle className="h-3 w-3 text-primary" />
-                    </div>
-                    <span className="ml-3 text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={{
-                hidden: { opacity: 0, x: 20 },
-                visible: { 
-                  opacity: 1, 
-                  x: 0,
-                  transition: { duration: 0.6 }
-                }
-              }}
-            >
-              <img 
-                src="https://images.pexels.com/photos/7262397/pexels-photo-7262397.jpeg" 
-                alt="Sustainable manufacturing" 
-                className="rounded-lg shadow-medium"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Bulk Orders CTA */}
       <section className="py-16 bg-primary">

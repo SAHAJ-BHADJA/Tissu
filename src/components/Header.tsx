@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Scissors as Tissue } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import logo from "../images/logo.png";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,8 +22,8 @@ const Header: React.FC = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Close mobile menu when navigating
@@ -31,22 +32,21 @@ const Header: React.FC = () => {
   }, [location]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Products', path: '/products' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Products", path: "/products" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <header 
+    <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-soft py-2' : 'bg-transparent py-4'
+        isScrolled ? "bg-white shadow-soft py-2" : "bg-transparent py-4"
       }`}
     >
       <div className="container-custom flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <Tissue className="h-8 w-8 text-primary mr-2" />
-          <span className="text-2xl font-montserrat font-bold text-gray-900">Tissu</span>
+          <img src={logo} alt="Tissu Logo" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -56,9 +56,9 @@ const Header: React.FC = () => {
               key={link.name}
               to={link.path}
               className={`font-medium transition-colors ${
-                location.pathname === link.path 
-                  ? 'text-primary border-b-2 border-primary' 
-                  : 'text-gray-700 hover:text-primary'
+                location.pathname === link.path
+                  ? "text-primary border-b-2 border-primary"
+                  : "text-gray-700 hover:text-primary"
               }`}
             >
               {link.name}
@@ -81,7 +81,7 @@ const Header: React.FC = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white"
           >
@@ -92,9 +92,9 @@ const Header: React.FC = () => {
                     key={link.name}
                     to={link.path}
                     className={`font-medium py-2 px-4 rounded-md transition-colors ${
-                      location.pathname === link.path 
-                        ? 'text-white bg-primary' 
-                        : 'text-gray-700 hover:bg-gray-100'
+                      location.pathname === link.path
+                        ? "text-white bg-primary"
+                        : "text-gray-700 hover:bg-gray-100"
                     }`}
                   >
                     {link.name}

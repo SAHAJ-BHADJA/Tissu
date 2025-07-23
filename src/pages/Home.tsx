@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import TestimonialCard from '../components/TestimonialCard';
 import ProductCard from '../components/ProductCard';
+import landingImage from "../images/home_page.jpg";
 
 const Home: React.FC = () => {
   // Animation variants
@@ -75,11 +76,11 @@ const Home: React.FC = () => {
       <section className="relative h-screen flex items-center">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.pexels.com/photos/7262776/pexels-photo-7262776.jpeg" 
+            src= {landingImage} 
             alt="Tissu tissue papers" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gray-900 bg-opacity-60"></div>
+          <div className="absolute inset-0 bg-gray-900 bg-opacity-20"></div>
         </div>
         
         <div className="container-custom relative z-10 text-white">
@@ -214,7 +215,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Sustainability Section */}
-      <section className="section bg-primary bg-opacity-5">
+      {/* <section className="section bg-primary bg-opacity-5">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -276,7 +277,7 @@ const Home: React.FC = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Section */}
       <section className="section">
