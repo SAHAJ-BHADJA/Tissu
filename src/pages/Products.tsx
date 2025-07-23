@@ -3,6 +3,10 @@ import { motion } from 'framer-motion';
 import { Filter, Leaf, ShieldCheck, Heart } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import productsHeroImage from '../images/products_hero.jpeg';
+import browseToiletPaperImage from "../images/browse_toilet_paper.jpeg";
+import browseDinnerPaperImage from "../images/browse_dinner_paper.jpeg";
+import browseFacialPaperImage from "../images/browse_facial_paper.webp";
+import browseKitchenPaperImage from "../images/browse_kitchen_paper.webp";
 
 const Products: React.FC = () => {
   const fadeIn = {
@@ -16,86 +20,46 @@ const Products: React.FC = () => {
 
   const categories = [
     'All Products',
-    'Facial Tissues',
     'Bathroom Tissues',
     'Kitchen Towels',
-    'Napkins',
-    'Specialty Papers'
+    'Napkins'
   ];
 
   const products = [
+
     {
       id: 1,
-      name: 'Premium Facial Tissues',
-      description: 'Ultra-soft, 3-ply facial tissues made from 100% virgin pulp, perfect for sensitive skin.',
-      image: 'https://images.pexels.com/photos/4239013/pexels-photo-4239013.jpeg',
-      category: 'Facial Tissues',
-      features: ['3-ply softness', 'Virgin pulp', 'Dermatologically tested']
-    },
-    {
-      id: 2,
-      name: 'Bamboo Toilet Paper',
+      name: 'Toilet Paper',
       description: 'Sustainable toilet paper made from FSC-certified bamboo, combining strength with eco-friendliness.',
-      image: 'https://images.pexels.com/photos/6940148/pexels-photo-6940148.jpeg',
+      image: browseToiletPaperImage,
       category: 'Bathroom Tissues',
       features: ['Bamboo fiber', 'Plastic-free packaging', 'Biodegradable']
     },
     {
-      id: 3,
-      name: 'Eco Kitchen Towels',
-      description: 'Strong, absorbent kitchen towels perfect for all cleaning needs, made with sustainable materials.',
-      image: 'https://images.pexels.com/photos/4239056/pexels-photo-4239056.jpeg',
-      category: 'Kitchen Towels',
-      features: ['Super absorbent', 'Durable wet strength', 'Eco-friendly']
-    },
-    {
-      id: 4,
+      id: 2,
       name: 'Organic Dinner Napkins',
       description: 'Elegant, soft napkins made from organic materials, perfect for any dining occasion.',
-      image: 'https://images.pexels.com/photos/5824438/pexels-photo-5824438.jpeg',
+      image: browseDinnerPaperImage,
       category: 'Napkins',
       features: ['Organic materials', 'Elegant texture', 'Biodegradable']
     },
     {
-      id: 5,
+      id: 3,
       name: 'Natural Facial Tissues',
       description: 'Unbleached facial tissues with natural water-based binders, perfect for sensitive skin.',
-      image: 'https://images.pexels.com/photos/3860786/pexels-photo-3860786.jpeg',
+      image: browseFacialPaperImage,
       category: 'Facial Tissues',
       features: ['Unbleached', 'Natural binders', 'Sensitive skin friendly']
     },
     {
-      id: 6,
-      name: 'Recycled Toilet Paper',
-      description: 'High-quality toilet paper made from recycled materials without compromising on softness.',
-      image: 'https://images.pexels.com/photos/6941088/pexels-photo-6941088.jpeg',
-      category: 'Bathroom Tissues',
-      features: ['100% recycled', 'Chlorine-free', 'Septic-safe']
-    },
-    {
-      id: 7,
+      id: 5,
       name: 'Premium Kitchen Rolls',
       description: 'Extra strong kitchen towels made with sustainable virgin pulp for superior absorption.',
-      image: 'https://images.pexels.com/photos/6942045/pexels-photo-6942045.jpeg',
+      image: browseKitchenPaperImage,
       category: 'Kitchen Towels',
       features: ['Virgin pulp', 'Extra strong', 'Reusable when wet']
     },
-    {
-      id: 8,
-      name: 'Eco Party Napkins',
-      description: 'Colorful, sustainable napkins perfect for parties and events, made from recycled materials.',
-      image: 'https://images.pexels.com/photos/5428012/pexels-photo-5428012.jpeg',
-      category: 'Napkins',
-      features: ['Recycled materials', 'Variety of colors', 'Biodegradable']
-    },
-    {
-      id: 9,
-      name: 'Natural Gift Tissue',
-      description: 'Delicate, unbleached tissue paper for beautiful gift presentations, made sustainably.',
-      image: 'https://images.pexels.com/photos/1598024/pexels-photo-1598024.jpeg',
-      category: 'Specialty Papers',
-      features: ['Unbleached', 'Acid-free', 'Natural colors']
-    }
+
   ];
 
   const [activeCategory, setActiveCategory] = React.useState('All Products');
